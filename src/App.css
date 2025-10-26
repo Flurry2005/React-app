@@ -1,0 +1,132 @@
+#root{
+    min-height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+}
+
+main{
+    display: grid;
+    grid-template-columns: repeat(fit-content, auto);
+    justify-items: center;
+    align-items: center;
+    position: relative;
+}
+
+.heading{
+    max-width: fit-content;
+    text-align: center;
+    margin: 2rem;
+    display: flex;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    padding: 5px 0 5px 0;
+}
+
+.heading::after {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  background-color: var(--bs-primary);
+
+  /* Animation */
+  transform: translateX(-100%);
+  animation: slide 3s linear infinite;
+}
+.heading::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  background-color: var(--bs-primary);
+
+  /* Animation */
+  transform: translateX(100%);
+  animation: slide1 3s linear infinite;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+@keyframes slide1 {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.to-do-list-container{
+    display: grid;
+    min-width: 50rem;
+    max-width: 50rem;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 5rem;
+    gap: 5rem;
+    align-content: start;
+    justify-content: center;
+}
+
+.counter-container{
+    min-width: 100%;
+    max-width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+}
+
+.counter-container ul{
+    width: 100%;
+}
+
+.counter-container li{
+    display: grid;
+    grid-template-columns: 1fr .4fr;
+    overflow-wrap: anywhere;
+    text-wrap: wrap;
+    padding: 1rem .5rem 1rem 0.5rem;
+}
+
+.counter-container > button{
+    width: 100%;
+    margin: 0.5rem 0 .5rem 0;
+}
+
+.counter-container li > button {
+    height: 2rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+
+footer{
+    height: 5rem;
+    margin-top: 2rem;
+    border-top: 1px solid rgb(222, 221, 221);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    bottom: 0;
+}

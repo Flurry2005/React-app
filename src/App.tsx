@@ -1,19 +1,30 @@
-import { useState } from "react";
-import Alert from "./components/Alert";
-import Button from "./components/Button";
+import Counter from "./components/Counter";
+import Footer from "./components/Footer";
 
 function App() {
-  const [alertVisible, setAlertVisibility] = useState(false);
+  const handleCounterOnClick = () => {};
 
   return (
-    <div>
-      {alertVisible && (
-        <Alert onClose={() => setAlertVisibility(false)}>Oh Noooo</Alert>
-      )}
-      <Button color="danger" onClick={() => setAlertVisibility(true)}>
-        Hello World <span>Sigma</span>
-      </Button>
-    </div>
+    <>
+      <main>
+        <h1 className="heading">TO DO LIST</h1>
+        <div className="to-do-list-container">
+          <Counter
+            onClick={handleCounterOnClick}
+            buttonText="Add!"
+            heading="Freetime:"
+            storageKey="counter-1"
+          />
+          <Counter
+            onClick={handleCounterOnClick}
+            buttonText="Add!"
+            heading="School:"
+            storageKey="counter-2"
+          />
+        </div>
+      </main>
+      <Footer></Footer>
+    </>
   );
 }
 
